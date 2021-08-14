@@ -4,7 +4,9 @@ services:
     samba:
         build: image
         volumes:
-            - "$RUN_MOUNT:/mount"
+            - type: bind
+              source: "$RUN_MOUNT"
+              target: "/mount"
         ports:
             - "$RUN_PORT:445"
         restart_policy: 

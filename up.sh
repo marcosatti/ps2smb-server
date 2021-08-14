@@ -15,5 +15,8 @@ export RUN_MOUNT=/mnt/sdx1
 
 echo "UID is $RUN_UID"
 echo "GID is $RUN_GID"
+echo "PORT is $RUN_PORT"
+echo "MOUNT is $RUN_MOUNT"
+
 echo "Starting"
 podman-compose up -d
