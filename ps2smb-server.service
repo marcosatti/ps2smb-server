@@ -1,0 +1,17 @@
+# PS2SMB Server systemd service unit file.
+# Derived from here (thanks!): https://stackoverflow.com/questions/43671482/how-to-run-docker-compose-up-d-at-system-start-up
+
+[Unit]
+Description=PS2SMB Server
+Requires=podman.socket
+After=podman.socket
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/root/ps2smb-server
+ExecStart=/bin/bash /root/ps2smb-server/up.sh
+ExecStop=/bin/bash /root/ps2smb-server/down.sh
+
+[Install]
+WantedBy=multi-user.target

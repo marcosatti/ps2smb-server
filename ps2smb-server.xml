@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>PS2SMB Server</short>
+  <description>PS2SMB server.</description>
+  <port port="1011" protocol="tcp"/>
+</service>

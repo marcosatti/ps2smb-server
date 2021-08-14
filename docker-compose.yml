@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+    samba:
+        build: image
+        volumes:
+            - "$RUN_MOUNT:/mount"
+        ports:
+            - "$RUN_PORT:445"
+        restart_policy: 
+            condition: on-failure
+        environment: 
+            - "RUN_UID=${RUN_UID}"
+            - "RUN_GID=${RUN_GID}"
+        # Required for selinux context passthrough.
+        privileged: true
